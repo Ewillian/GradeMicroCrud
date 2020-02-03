@@ -20,7 +20,7 @@ public class Student {
     private long gradeid;
     private String firstName;
     private String lastName;
-    private Date birthDate;
+    private String birthDate;
 
     public long getid() {
         return id;
@@ -54,11 +54,11 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public Date getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 }

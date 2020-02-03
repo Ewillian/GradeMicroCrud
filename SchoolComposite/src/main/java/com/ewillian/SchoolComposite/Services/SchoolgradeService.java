@@ -42,7 +42,6 @@ public class SchoolgradeService {
     public SchoolgradeDTO getGradeStudents(Long id){
         Grade grade = igradeschoolgrade.getGradeField(id);
         List<Student> gradeStudents = istudentschoolgrade.getAllForGrade(id);
-
         return new SchoolgradeDTO(grade, gradeStudents);
     };
 
