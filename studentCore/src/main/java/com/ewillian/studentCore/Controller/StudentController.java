@@ -49,11 +49,11 @@ public class StudentController {
             student.setFirstName(newStudent.getFirstName());
             student.setLastName(newStudent.getLastName());
             student.setBirthDate(newStudent.getBirthDate());
-            student.setFK_id(newStudent.getFK_id());
-            student.setPKid(newStudent.getPKid());
+            student.setgradeid(newStudent.getgradeid());
+            student.setid(newStudent.getid());
             return repository.save(student);
         }).orElseGet(() -> {
-            newStudent.setFK_id(id);
+            newStudent.setgradeid(id);
             return repository.save(newStudent);
         });
     }

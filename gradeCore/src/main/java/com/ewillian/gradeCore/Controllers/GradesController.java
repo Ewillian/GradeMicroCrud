@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping(path="")
+@RequestMapping(path="/grades")
 public class GradesController {
     @Autowired
     private GradeRepository repository;
@@ -22,18 +22,16 @@ public class GradesController {
         this.repository = repository;
     }
 
-    @GetMapping(path="/grades")
-    public @ResponseBody
-    List<Grade> getGrades() {
+    @GetMapping(path="")
+    public @ResponseBody List<Grade> getGrades() {
         System.out.println("Getting all Grades.");
         return repository.findAll();
     }
 
-    @GetMapping("/grades/{id}")
-    public @ResponseBody
-    Grade getGradeById(@RequestParam Long PKid) {
+    @GetMapping("/{id}")
+    public @ResponseBody Grade getGradeById(@PathVariable Long id) {
         // This returns a JSON or XML with the user
-        return repository.findById(PKid).get();
+        return repository.findById(id).get();
     }
 
     /* @GetMapping("/grades")
@@ -43,28 +41,28 @@ public class GradesController {
         return (Grade) repository.findAllByUserId(userId);
     } */
 
-    @PostMapping(path="/grades/add") // Map ONLY POST Requests
+    @PostMapping(path="/add") // Map ONLY POST Requests
     public @ResponseBody Grade addGrade (@RequestBody Grade newGrade) {
         return repository.save(newGrade);
     }
 
-    @PutMapping("/grades/{id}")
-    Grade updateGrade(@RequestBody Grade newGrade, @PathVariable Long PKid) {
+    @PutMapping("/{id}")
+    Grade updateGrade(@RequestBody Grade newGrade, @PathVariable Long id) {
 
-        return repository.findById(PKid).map(todo -> {
-            todo.setPKid(newGrade.getPKid());
-            todo.setHeadTeacher(newGrade.getHeadTeacher());
-            todo.setTitle(newGrade.getTitle());
-            todo.setYear(newGrade.getYear());
-            return repository.save(todo);
+        return repository.findById(id).map(grade -> {
+            grade.setid(newGrade.getid());
+            grade.setHeadTeacher(newGrade.getHeadTeacher());
+            grade.setTitle(newGrade.getTitle());
+            grade.setYear(newGrade.getYear());
+            return repository.save(grade);
         }).orElseGet(() -> {
-            newGrade.setPKid(PKid);
+            newGrade.setid(id);
             return repository.save(newGrade);
         });
     }
 
-    @DeleteMapping("/grades/{id}")
-    void deleteGrade(@PathVariable Long PKid) {
-        repository.deleteById(PKid);
+    @DeleteMapping("/{id}")
+    void deleteGrade(@PathVariable Long id) {
+        repository.deleteById(id);
     }
 }
