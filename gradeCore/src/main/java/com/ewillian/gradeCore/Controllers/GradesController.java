@@ -34,14 +34,7 @@ public class GradesController {
         return repository.findById(id).get();
     }
 
-    /* @GetMapping("/grades")
-    public @ResponseBody
-    Grade getGradeByUserId(@RequestParam Long userId) {
-        // This returns a JSON or XML with the user
-        return (Grade) repository.findAllByUserId(userId);
-    } */
-
-    @PostMapping(path="/add") // Map ONLY POST Requests
+    @PostMapping(path="/add")
     public @ResponseBody Grade addGrade (@RequestBody Grade newGrade) {
         return repository.save(newGrade);
     }
@@ -61,7 +54,7 @@ public class GradesController {
         });
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     void deleteGrade(@PathVariable Long id) {
         repository.deleteById(id);
     }
