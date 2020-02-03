@@ -1,4 +1,4 @@
-package com.ewillian.SchoolComposite.Entities;
+package com.ewillian.Api.Entities;
 
 public class Student {
 

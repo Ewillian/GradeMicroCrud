@@ -1,12 +1,16 @@
-package com.ewillian.SchoolComposite.Entities;
+package com.ewillian.Api.Entities;
 
-public class Student {
+import java.util.Date;
+
+public class Teacher {
 
     private long id;
-    private long gradeid;
+
     private String firstName;
+
     private String lastName;
-    private String birthDate;
+
+    private Date birthDate;
 
     public long getid() {
         return id;
@@ -14,14 +18,6 @@ public class Student {
 
     public void setid(long id) {
         this.id = id;
-    }
-
-    public long getgradeid() {
-        return gradeid;
-    }
-
-    public void setgradeid(long gradeid) {
-        this.gradeid = gradeid;
     }
 
     public String getFirstName() {
@@ -36,15 +32,15 @@ public class Student {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastName(String longName) {
+        this.lastName = longName;
     }
 
-    public String getBirthDate() {
+    public Date getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(String birthDate) {
+    public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
 }
