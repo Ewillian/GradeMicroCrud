@@ -1,8 +1,5 @@
 package com.ewillian.Api.Services;
 
-import com.ewillian.Api.Entities.Grade;
-import com.ewillian.Api.Entities.SchoolgradeDTO;
-import com.ewillian.Api.Entities.Student;
 import com.ewillian.Api.Interfaces.IGradeSchoolgrade;
 import com.ewillian.Api.Interfaces.ISchoolGrade;
 import com.ewillian.Api.Interfaces.IStudentSchoolgrade;

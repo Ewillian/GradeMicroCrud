@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 @RestController
 public class SchoolgradeController {
 
@@ -19,8 +17,7 @@ public class SchoolgradeController {
     SchoolgradeService schoolgradeservice;
 
     @RequestMapping("gradeStudents/{id}")
-    ResponseEntity<Grade> getGradeStudents(@PathVariable("id") Long id){
+    ResponseEntity<Object> getGradeStudents(@PathVariable("id") Long id) {
         return new ResponseEntity<>(schoolgradeservice.getISchooldGrade().getGradeStudents(id), HttpStatus.OK);
     }
-
 }

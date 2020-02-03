@@ -1,6 +1,7 @@
 package com.ewillian.Api.Interfaces;
 
 import com.ewillian.Api.Entities.Grade;
+import com.ewillian.Api.Entities.SchoolgradeDTO;
 import feign.Param;
 import feign.RequestLine;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -11,5 +12,5 @@ import org.springframework.stereotype.Component;
 public interface ISchoolGrade {
 
     @RequestLine("GET /schoolgrades/{id}")
-    Grade getGradeStudents(@Param("id") Long id);
+    Object getGradeStudents(@Param("id") Long id);
 }
