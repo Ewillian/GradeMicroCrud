@@ -10,20 +10,6 @@ import java.util.Date;
 
 @Entity
 public class Student {
-
-    public static void main(String[] args) {
-        String pattern = "MM/dd/yyyy";
-        SimpleDateFormat format = new SimpleDateFormat(pattern);
-        try {
-            Date date = format.parse("12/31/2006");
-            System.out.println(date);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        // formatting
-        System.out.println(format.format(new Date()));
-    }
-
     private static final long serialVersionUID = 1L;
 
     @Id
