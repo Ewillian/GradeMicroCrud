@@ -6,12 +6,10 @@ import feign.RequestLine;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
 @Component
 @FeignClient(name = "GradeSchoolgrade")
 public interface IGradeSchoolgrade {
 
-    @RequestLine("GET /{PKid}")
-    Grade getGradeField(@Param("PKid") Long PKid);
+    @RequestLine("GET /{id}")
+    Grade getGradeField(@Param("id") Long id);
 }

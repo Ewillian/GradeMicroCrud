@@ -10,7 +10,7 @@ public class Grade {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private long PKid;
+    private long id;
 
     private String title;
 
@@ -18,12 +18,12 @@ public class Grade {
 
     private String year;
 
-    public long getPKid() {
-        return PKid;
+    public long getid() {
+        return id;
     }
 
-    public void setPKid(long PKid) {
-        this.PKid = PKid;
+    public void setid(long id) {
+        this.id = id;
     }
 
     public String getTitle() {

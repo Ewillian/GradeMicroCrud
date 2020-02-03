@@ -31,9 +31,9 @@ public class GradesController {
 
     @GetMapping("/grades/{id}")
     public @ResponseBody
-    Grade getGradeById(@RequestParam Long PKid) {
+    Grade getGradeById(@RequestParam Long id) {
         // This returns a JSON or XML with the user
-        return repository.findById(PKid).get();
+        return repository.findById(id).get();
     }
 
     /* @GetMapping("/grades")
@@ -49,22 +49,22 @@ public class GradesController {
     }
 
     @PutMapping("/grades/{id}")
-    Grade updateGrade(@RequestBody Grade newGrade, @PathVariable Long PKid) {
+    Grade updateGrade(@RequestBody Grade newGrade, @PathVariable Long id) {
 
-        return repository.findById(PKid).map(todo -> {
-            todo.setPKid(newGrade.getPKid());
+        return repository.findById(id).map(todo -> {
+            todo.setid(newGrade.getid());
             todo.setHeadTeacher(newGrade.getHeadTeacher());
             todo.setTitle(newGrade.getTitle());
             todo.setYear(newGrade.getYear());
             return repository.save(todo);
         }).orElseGet(() -> {
-            newGrade.setPKid(PKid);
+            newGrade.setid(id);
             return repository.save(newGrade);
         });
     }
 
     @DeleteMapping("/grades/{id}")
-    void deleteGrade(@PathVariable Long PKid) {
-        repository.deleteById(PKid);
+    void deleteGrade(@PathVariable Long id) {
+        repository.deleteById(id);
     }
 }

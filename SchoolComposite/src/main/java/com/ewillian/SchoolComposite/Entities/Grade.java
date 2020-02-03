@@ -1,13 +1,8 @@
 package com.ewillian.SchoolComposite.Entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
 public class Grade {
 
-    private long PKid;
+    private long id;
 
     private String title;
 
@@ -15,12 +10,12 @@ public class Grade {
 
     private String year;
 
-    public long getPKid() {
-        return PKid;
+    public long getid() {
+        return id;
     }
 
-    public void setPKid(long PKid) {
-        this.PKid = PKid;
+    public void setid(long id) {
+        this.id = id;
     }
 
     public String getTitle() {

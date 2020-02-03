@@ -14,6 +14,6 @@ public interface IStudentSchoolgrade {
     @RequestLine("GET ")
     List<Student> getAll();
 
-    @RequestLine("GET ?userId={userId}")
-    List<Student> getAllForGrade(@Param("gradePKid") Long gradePKid);
+    @RequestLine("GET ?gradeid={gradeid}")
+    List<Student> getAllForGrade(@Param("gradeid") Long gradeid);
 }

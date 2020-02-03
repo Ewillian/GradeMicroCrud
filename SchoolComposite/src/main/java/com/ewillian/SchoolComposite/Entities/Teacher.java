@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Teacher {
 
-    private long PKid;
+    private long id;
 
     private String firstName;
 
@@ -12,12 +12,12 @@ public class Teacher {
 
     private Date birthDate;
 
-    public long getPKid() {
-        return PKid;
+    public long getid() {
+        return id;
     }
 
-    public void setPKid(long PKid) {
-        this.PKid = PKid;
+    public void setid(long id) {
+        this.id = id;
     }
 
     public String getFirstName() {

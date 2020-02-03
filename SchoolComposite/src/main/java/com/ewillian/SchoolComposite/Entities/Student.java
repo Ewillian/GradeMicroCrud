@@ -4,26 +4,26 @@ import java.util.Date;
 
 public class Student {
 
-    private long PKid;
-    private long FK_id;
+    private long id;
+    private long gradeid;
     private String firstName;
     private String lastName;
     private Date birthDate;
 
-    public long getPKid() {
-        return PKid;
+    public long getid() {
+        return id;
     }
 
-    public void setPKid(long PKid) {
-        this.PKid = PKid;
+    public void setid(long id) {
+        this.id = id;
     }
 
-    public long getFK_id() {
-        return FK_id;
+    public long getgradeid() {
+        return gradeid;
     }
 
-    public void setFK_id(long FK_id) {
-        this.FK_id = FK_id;
+    public void setgradeid(long gradeid) {
+        this.gradeid = gradeid;
     }
 
     public String getFirstName() {

@@ -39,11 +39,12 @@ public class SchoolgradeService {
             .target(IGradeSchoolgrade.class, "http://localhost:8081/grades");
 
 
-    public SchoolgradeDTO getGradeStudents(Long PKid){
-        Grade grade = igradeschoolgrade.getGradeField(PKid);
+    public SchoolgradeDTO getGradeStudents(Long id){
+        log.info("GetAll1");
+        Grade grade = igradeschoolgrade.getGradeField(id);
         log.info("GetAll");
         //log.info("GetAll");
-        List<Student> gradeStudents = istudentschoolgrade.getAllForGrade(PKid);
+        List<Student> gradeStudents = istudentschoolgrade.getAllForGrade(id);
 
         return new SchoolgradeDTO(grade, gradeStudents);
     };

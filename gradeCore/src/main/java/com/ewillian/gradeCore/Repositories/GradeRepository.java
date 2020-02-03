@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 public interface GradeRepository extends JpaRepository<Grade, Long> {
-    List<Grade> findAllByPKid(Long PKid);
+    List<Grade> findAllByid(Long id);
 }
