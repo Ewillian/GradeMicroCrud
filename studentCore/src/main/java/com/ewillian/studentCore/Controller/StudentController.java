@@ -50,7 +50,7 @@ public class StudentController {
             student.setLastName(newStudent.getLastName());
             student.setBirthDate(newStudent.getBirthDate());
             student.setFK_id(newStudent.getFK_id());
-            student.setPK_id(newStudent.getPK_id());
+            student.setPKid(newStudent.getPKid());
             return repository.save(student);
         }).orElseGet(() -> {
             newStudent.setFK_id(id);

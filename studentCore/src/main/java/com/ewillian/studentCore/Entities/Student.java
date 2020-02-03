@@ -30,18 +30,18 @@ public class Student {
     @GeneratedValue(strategy= GenerationType.AUTO)
 
 
-    private long PK_id;
+    private long PKid;
     private long FK_id;
     private String firstName;
     private String lastName;
     private Date birthDate;
 
-    public long getPK_id() {
-        return PK_id;
+    public long getPKid() {
+        return PKid;
     }
 
-    public void setPK_id(long PK_id) {
-        this.PK_id = PK_id;
+    public void setPKid(long PKid) {
+        this.PKid = PKid;
     }
 
     public long getFK_id() {
