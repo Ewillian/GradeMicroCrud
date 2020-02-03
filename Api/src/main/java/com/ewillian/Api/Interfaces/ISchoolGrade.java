@@ -10,4 +10,6 @@ import org.springframework.stereotype.Component;
 @FeignClient(name = "Schoolgrade")
 public interface ISchoolGrade {
 
+    @RequestLine("GET /schoolgrades/{id}")
+    Grade getGradeStudents(@Param("id") Long id);
 }

@@ -35,7 +35,7 @@ public class SchoolgradeService {
             .decoder(new GsonDecoder())
             .logger(new Slf4jLogger())
             .logLevel(Logger.Level.FULL)
-            .target(IGradeSchoolgrade.class, "http://localhost:8081/grades");
+            .target(IGradeSchoolgrade.class, "http://localhost:8081/");
 
 
     private ISchoolGrade ischoolgrade = Feign.builder()
@@ -44,7 +44,7 @@ public class SchoolgradeService {
             .decoder(new GsonDecoder())
             .logger(new Slf4jLogger())
             .logLevel(Logger.Level.FULL)
-            .target(ISchoolGrade.class, "http://localhost:8085/schoolgrades");
+            .target(ISchoolGrade.class, "http://localhost:8085/");
 
     public IStudentSchoolgrade getIStudent(){
         return this.istudentschoolgrade;

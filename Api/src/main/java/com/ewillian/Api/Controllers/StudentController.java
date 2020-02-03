@@ -1,6 +1,5 @@
 package com.ewillian.Api.Controllers;
 
-import com.ewillian.Api.Entities.SchoolgradeDTO;
 import com.ewillian.Api.Entities.Student;
 import com.ewillian.Api.Services.SchoolgradeService;
 import feign.Param;

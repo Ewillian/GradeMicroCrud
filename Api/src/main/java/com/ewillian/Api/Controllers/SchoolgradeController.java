@@ -1,7 +1,7 @@
 package com.ewillian.Api.Controllers;
 
+import com.ewillian.Api.Entities.Grade;
 import com.ewillian.Api.Entities.SchoolgradeDTO;
-import com.ewillian.Api.Entities.Student;
 import com.ewillian.Api.Services.SchoolgradeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,5 +17,10 @@ public class SchoolgradeController {
 
     @Autowired
     SchoolgradeService schoolgradeservice;
+
+    @RequestMapping("gradeStudents/{id}")
+    ResponseEntity<Grade> getGradeStudents(@PathVariable("id") Long id){
+        return new ResponseEntity<>(schoolgradeservice.getISchooldGrade().getGradeStudents(id), HttpStatus.OK);
+    }
 
 }
